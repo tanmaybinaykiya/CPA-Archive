@@ -1,5 +1,17 @@
-#header {
+body{
+    height: 100%;
+}
+
+#header, #footer {
     background-color: #222;
+}
+
+#footer a{
+    color: #fff;
+}
+
+#footer{
+    /* clear: both; */
 }
 
 #header h4, p{
@@ -36,4 +48,7 @@
     height: 400px;
     overflow-y: auto;
     overflow-x: hidden;  /** TODO: SHOULDNT BE NEEDED **/
+}
+.search-page-image-row{
+    margin-bottom: 20px;
 }
