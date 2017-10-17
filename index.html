@@ -1,38 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Page Needs –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>CPA Puppet Archive</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <!-- Basic Page Needs –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>CPA Puppet Archive</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <!-- Mobile Specific Metas –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Mobile Specific Metas –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <!-- Bootstrap –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- Bootstrap –––––––––––––––––––––––––––––––––––––––––––––––––– -->
- 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Mustache -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Custom CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
 
-  <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="img/favicon.png">
+    <script id="search-results-template" type="x-tmpl-mustache">
+        {{#puppets}}
+        <a href="puppet.html?puppetId={{index}}" >
+            <div class="col-md-2">
+                <img src={{imageTitle}} class="media-object col-md-12">
+                <span class="col-md-12" style= "text-align:center">{{name}}</span>
+            </div>
+        </a>
+        {{/puppets}}
+    </script>
+
+    <script>
+        var template = $('#search-results-template').html();
+        Mustache.parse(template);   // optional, speeds up future uses
+
+        function urlParam(name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            return results?results[1] : "";
+        };
+
+        function render(){
+            var searchKey = urlParam("srch-term");
+            $.get('data.json', function(puppets) {
+                puppets = $.map(puppets, function(el, index){
+                    el.index = index;
+                    return el;
+                });
+                if(searchKey){
+                    puppets = puppets.filter(function(el){
+                        caseInsensitiveName = el.name.toLowerCase();
+                        searchKey = searchKey.toLowerCase();
+                        return caseInsensitiveName.indexOf(searchKey) >= 0;
+                    });
+                }
+                var data = {"puppets":puppets};
+                console.log(searchKey, data);
+                var rendered = Mustache.render(template, data);
+                $('#search-results').html(rendered);
+            });
+        };
+        
+    </script>
 
 </head>
-<body>
+<body onload="render()">
   <!-- HEADER –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container-fluid">
     <div class="row">
@@ -58,56 +103,8 @@
         </div>
     </div>
     <div>
-        <div class = "search-page-image-row col-md-12">
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-        </div> 
-        <div class = "search-page-image-row col-md-12">
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-        </div> 
-        <div class = "search-page-image-row col-md-12">
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-        </div> 
-        <div class = "search-page-image-row col-md-12">
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-        </div> 
-        <div class = "search-page-image-row col-md-12">
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-        </div> 
-        <div class = "search-page-image-row col-md-12">
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-            <a href="puppet.html" ><img src="img/img_avatar1.png" class="media-object col-md-2"></a>
-        </div> 
+        <div id="search-results" class = "search-page-image-row col-md-12"></div> 
     </div>
-    
 
   </div>
     <!-- HEADER –––––––––––––––––––––––––––––––––––––––––––––––––– -->

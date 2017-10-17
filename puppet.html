@@ -3,36 +3,99 @@
 <head>
 
   <!-- Basic Page Needs –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>CPA Puppet Archive</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <title>CPA Puppet Archive</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <!-- Mobile Specific Metas –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Mobile Specific Metas –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <!-- Bootstrap –––––––––––––––––––––––––––––––––––––––––––––––––– -->
- 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Bootstrap –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <!-- Custom CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/styles.css">
+    <!-- Custom CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="img/favicon.png">
+    <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <script id="images-template" type="x-tmpl-mustache">
+        {{#images}}
+            <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src={{.}} class="media-object col-md-4"></a>
+        {{/images}}
+    </script>
+
+    <script id="page-title-template" type="x-tmpl-mustache">
+        {{name}}
+    </script>
+
+    <script id="info-template" type="x-tmpl-mustache">
+        {{#info}}
+            <div class="row">
+                <span class="col-md-4">{{key}}</span>
+                <span class="col-md-8">{{value}}</span>
+            </div>
+        {{/info}}
+    </script>
+
+    <script>
+        function urlParam(name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            return results?results[1] : 0;
+        };
+
+        var imagesTabTemplate = $('#images-template').html();
+        Mustache.parse(imagesTabTemplate);                          // optional, speeds up future uses
+        var infoTabTemplate = $('#info-template').html();
+        Mustache.parse(infoTabTemplate);                            // optional, speeds up future uses
+        var pageTitleTemplate = $('#page-title-template').html();
+        Mustache.parse(pageTitleTemplate);                          // optional, speeds up future uses
+
+        function renderImagesTab(puppet){
+            var imagesTabRendered = Mustache.render(imagesTabTemplate, puppet);
+            $('#images').html(imagesTabRendered);
+        };
+
+        function renderInfoTab(puppet){
+            var infoTabRendered = Mustache.render(infoTabTemplate, puppet);
+            $('#info').html(infoTabRendered);
+        };
+
+        function renderPageTitle(puppet){
+            var pageTitleRendered = Mustache.render(pageTitleTemplate, puppet);
+            $('#page-title').html(pageTitleRendered);
+            $('.modal-title').html(pageTitleRendered);
+        };
+
+        function render(){
+            $.get('data.json', function(puppets) {
+                var puppetId = urlParam("puppetId");
+                console.log("Index:", puppetId);
+                var puppet = puppets[puppetId];
+                renderImagesTab(puppet);
+                renderInfoTab(puppet);
+                renderPageTitle(puppet);
+            });
+        };
+
+    </script>
 
 </head>
-<body>
+<body onload="render()">
   <!-- HEADER –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container-fluid">
     <div class="row">
@@ -50,117 +113,20 @@
       </div>
       <div class="col-md-4" id="tabs">
 
-        <h3>2003.006.070 ~ Puppet, Shadow</h3>
+        <h3 id ="page-title"></h3>
 
         <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#info">Info</a></li>
-          <li><a data-toggle="tab" href="#images">Images</a></li>
+          <li class="active"><a data-toggle="tab" href="#info"><span class="glyphicon glyphicon-list-alt"></span></a></li>
+          <li><a data-toggle="tab" href="#images"><span class="glyphicon glyphicon-picture"></span></a></li>
+          <li><a data-toggle="tab" href="#videos"><span class="glyphicon glyphicon-facetime-video disabled"></span></a></li>
+          <li><a data-toggle="tab" href="#download"><span class="glyphicon glyphicon-download-alt "></span></a></li>
         </ul>
 
         <div class="tab-content">
-          <div id="info" class="tab-pane fade in active">
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value That is too long. I want it to fall on the next line. This is some huge description of some puppet that is awesome and beautiful</span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>  
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>  
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>
-            <div class="row">
-              <span class="col-md-4"> Some Title </span>
-              <span class="col-md-8"> Some value </span>
-            </div>  
-          </div>
-          <div id="images" class="tab-pane fade">
-            <div class="media">
-              <div class = "row">
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-              </div> 
-              <div class = "row">
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-              </div> 
-              <div class = "row">
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-              </div> 
-              <div class = "row">
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-              </div> 
-              <div class = "row">
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-                <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src="img/img_avatar1.png" class="media-object col-md-4"></a>
-              </div> 
-            </div>
-          </div>
+          <div id="info" class="tab-pane fade in active"></div>
+          <div id="images" class="tab-pane fade"></div>
+          <div id="videos" class="tab-pane fade">No videos available for the puppet</div>
+          <div id="download" class="tab-pane fade">No downloads available for the puppet</div>
         </div>
       </div>
     </div>
@@ -178,25 +144,18 @@
           </div>
           <div class="modal-body">
               <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                  <!-- Indicators -->
-                  <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                  </ol>
-              
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner">
                     <div class="item active">
-                      <img src="img/img_avatar1.png" alt="Los Angeles" style="width:100%;">
+                      <img src="img/img_avatar1.png" style="width:100%;">
                     </div>
               
                     <div class="item">
-                      <img src="img/img_avatar1.png" alt="Chicago" style="width:100%;">
+                      <img src="img/img_avatar1.png" style="width:100%;">
                     </div>
                   
                     <div class="item">
-                      <img src="img/img_avatar1.png" alt="New york" style="width:100%;">
+                      <img src="img/img_avatar1.png" style="width:100%;">
                     </div>
                   </div>
               
