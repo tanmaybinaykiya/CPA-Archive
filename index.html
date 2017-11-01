@@ -35,7 +35,7 @@
 
     <script id="search-results-template" type="x-tmpl-mustache">
         {{#puppets}}
-        <a href="puppet.html?puppetId={{index}}" >
+        <a href="puppet.html?puppetId={{index}}&class={{collection}}" >
             <div class="col-md-2">
                 <img src={{imageTitle}} class="media-object col-md-12">
                 <span class="col-md-12" style= "text-align:center">{{name}}</span>
@@ -53,24 +53,45 @@
             return results?results[1] : "";
         };
 
+        function renderHeader(){
+            // $("#header-wrapper").load("header.html");
+            var searchClass = urlParam("srch-class");
+            searchClass = searchClass?searchClass:"ASIAN";
+            var element = $(document.getElementById(searchClass));
+            console.log("el:", element);
+            element.addClass("selected");
+        }
+
         function render(){
             var searchKey = urlParam("srch-term");
+            var searchClass = urlParam("srch-class");
             $.get('data.json', function(puppets) {
-                puppets = $.map(puppets, function(el, index){
+                puppets = $.map(puppets, (el, index) => {
                     el.index = index;
                     return el;
                 });
                 if(searchKey){
-                    puppets = puppets.filter(function(el){
+                    puppets = puppets.filter((el)=>{
                         caseInsensitiveName = el.name.toLowerCase();
                         searchKey = searchKey.toLowerCase();
                         return caseInsensitiveName.indexOf(searchKey) >= 0;
                     });
                 }
+                searchClass = searchClass?searchClass:"ASIAN";
+                console.log("searchClass: ", searchClass);
+                puppets = puppets.filter((el)=>{
+                    caseInsensitiveCollection = el.collection.toUpperCase();
+                    searchClass = searchClass.toUpperCase();
+                    return caseInsensitiveCollection.indexOf(searchClass) >= 0;
+                });
                 var data = {"puppets":puppets};
                 console.log(searchKey, data);
                 var rendered = Mustache.render(template, data);
-                $('#search-results').html(rendered);
+                if(puppets.length > 0){
+                    $('#search-results').html(rendered);
+                }
+                
+                renderHeader();
             });
         };
         
@@ -79,11 +100,18 @@
 </head>
 <body onload="render()">
   <!-- HEADER –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container-fluid">
+  <div id="header-wrapper" class="container-fluid">
     <div class="row">
-      <div class="col-md-12" id ="header">
-        <h4>Header</h4>
-      </div>
+        <div class="col-md-12" id ="header">
+            <span id="header-title" class="col-md-4" >Center For Puppetry Arts</span>
+            
+            <span id="header-explore" class="col-md-2">Explore other collections</span>
+            <a class="header-location col-md-1" id="AFRICAN" href="?srch-class=AFRICAN">African</a>
+            <a class="header-location col-md-1" id="AMERICAS" href="?srch-class=AMERICAS">Americas</a>
+            <a class="header-location col-md-1" id="ASIAN" href="?srch-class=ASIAN">Asian</a>
+            <a class="header-location col-md-1" id="EUROPEAN" href="?srch-class=EUROPEAN">European</a>
+            <a class="header-location col-md-2" id="MIDEAST" href="?srch-class=MIDEAST">Middle Eastern</a>
+        </div>
     </div>
   </div>
 
@@ -103,7 +131,9 @@
         </div>
     </div>
     <div>
-        <div id="search-results" class = "search-page-image-row col-md-12"></div> 
+        <div id="search-results" class = "search-page-image-row col-md-12">
+            <span>No results to show...</span>
+        </div> 
     </div>
 
   </div>

@@ -44,6 +44,9 @@
     </script>
 
     <script id="info-template" type="x-tmpl-mustache">
+        <div class="row">
+            <span class="col-md-12">{{description}}</span>
+        </div>
         {{#info}}
             <div class="row">
                 <span class="col-md-4">{{key}}</span>
@@ -65,6 +68,15 @@
         var pageTitleTemplate = $('#page-title-template').html();
         Mustache.parse(pageTitleTemplate);                          // optional, speeds up future uses
 
+        function renderHeader(){
+            // $("#header-wrapper").load("header.html");
+            var searchClass = urlParam("class");
+            searchClass = searchClass?searchClass:"ASIAN";
+            var element = $(document.getElementById(searchClass));
+            console.log("el:", element);
+            element.addClass("selected");
+        }
+
         function renderImagesTab(puppet){
             var imagesTabRendered = Mustache.render(imagesTabTemplate, puppet);
             $('#images').html(imagesTabRendered);
@@ -81,6 +93,14 @@
             $('.modal-title').html(pageTitleRendered);
         };
 
+        function renderUnityElement(){
+          w = $('#unity-element-wrapper').offsetWidth;
+          h = $('#unity-element-wrapper').offsetHeight;
+          document.getElementById('canvas').setAttribute("width", w - 30);
+          document.getElementById('canvas').setAttribute("height", h - 30);
+          console.log("DONE!!!!!!!!!!!!");
+        }
+
         function render(){
             $.get('data.json', function(puppets) {
                 var puppetId = urlParam("puppetId");
@@ -89,6 +109,8 @@
                 renderImagesTab(puppet);
                 renderInfoTab(puppet);
                 renderPageTitle(puppet);
+                renderHeader();
+                // renderUnityElement();
             });
         };
 
@@ -97,10 +119,17 @@
 </head>
 <body onload="render()">
   <!-- HEADER –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container-fluid">
+  <div id="header-wrapper" class="container-fluid">
     <div class="row">
       <div class="col-md-12" id ="header">
-        <h4>Header</h4>
+          <span id="header-title" class="col-md-4" >Center For Puppetry Arts</span>
+          
+          <span id="header-explore" class="col-md-2">Explore other collections</span>
+          <a class="header-location col-md-1" id="AFRICAN" href="/index.html?srch-class=AFRICAN">African</a>
+          <a class="header-location col-md-1" id="AMERICAS" href="/index.html?srch-class=AMERICAS">Americas</a>
+          <a class="header-location col-md-1" id="ASIAN" href="/index.html?srch-class=ASIAN">Asian</a>
+          <a class="header-location col-md-1" id="EUROPEAN" href="/index.html?srch-class=EUROPEAN">European</a>
+          <a class="header-location col-md-2" id="MIDEAST" href="/index.html?srch-class=MIDEAST">Middle Eastern</a>
       </div>
     </div>
   </div>
@@ -108,18 +137,36 @@
   <div class="container">    
     <!-- Body –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="row" id ="main-body">
-      <div class="col-md-8" id="unity-element">
-        <h4>Unity 3D Element</h4>
+      <div class="col-md-8" id="unity-element-wrapper">
+        <!-- <span>UNITY is loading... </span> -->
+        <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" width="750" height="500"></canvas>
       </div>
+      <script type="text/javascript">
+        var callback = function (a,b,c){
+          console.log("Unity callback called: ", a,b,c);
+        }
+
+        var Module = {
+          TOTAL_MEMORY: 268435456,
+          errorhandler: callback,   // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+          compatibilitycheck: null,
+          backgroundColor: "#80858B",
+          splashStyle: "Dark",
+          dataUrl: "unity/Web_MonkeyKing.data",
+          codeUrl: "unity/Web_MonkeyKing.js",
+          asmUrl: "unity/Web_MonkeyKing.asm.js",
+          memUrl: "unity/Web_MonkeyKing.mem"
+        };
+      </script>
       <div class="col-md-4" id="tabs">
 
         <h3 id ="page-title"></h3>
 
         <ul class="nav nav-tabs">
           <li class="active"><a data-toggle="tab" href="#info"><span class="glyphicon glyphicon-list-alt"></span></a></li>
-          <li><a data-toggle="tab" href="#images"><span class="glyphicon glyphicon-picture"></span></a></li>
-          <li><a data-toggle="tab" href="#videos"><span class="glyphicon glyphicon-facetime-video disabled"></span></a></li>
-          <li><a data-toggle="tab" href="#download"><span class="glyphicon glyphicon-download-alt "></span></a></li>
+          <li><a data-toggle="tab" href="#images"><span class="icon-images"></span></a></li>
+          <li><a data-toggle="tab" href="#videos"><span class="icon-film disabled"></span></a></li>
+          <li><a data-toggle="tab" href="#download"><span class="icon-download"></span></a></li>
         </ul>
 
         <div class="tab-content">
@@ -131,7 +178,6 @@
       </div>
     </div>
   </div>
-
 
   <div id="imageCarousel" class="modal fade" role="dialog">
       <div class="modal-dialog">
@@ -183,9 +229,13 @@
         <a class="col-md-2" href="http://www.puppet.org/">CPA</a>
         <a class="col-md-2" href="https://www.gatech.edu">Georgia Tech</a>
         <a class="col-md-2" href="https://www.gatech.edu">Georgia Tech</a>
+        <span class="col-md-2"></span>
         <a class="col-md-12" href="#">Some long text that spans multiple lines. Some long text that spans multiple lines Some long text that spans multiple lines</a>
       </div>
     </div>
   </div>
+  <script src="./js/UnityLoader.js"></script>
+  <script src="blob:http://localhost:8000/2315fd00-fac5-4952-b29a-9c5d31b2c5ba"></script>
+  <script src="blob:http://localhost:8000/acdb315f-fec1-472a-a0e5-b9251e55a4c6"></script>
 </body>
 </html>
