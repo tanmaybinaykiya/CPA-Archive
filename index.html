@@ -84,7 +84,7 @@
                     searchClass = searchClass.toUpperCase();
                     return caseInsensitiveCollection.indexOf(searchClass) >= 0;
                 });
-                var data = {"puppets":puppets};
+                var data = {"puppets": puppets};
                 console.log(searchKey, data);
                 var rendered = Mustache.render(template, data);
                 if(puppets.length > 0){

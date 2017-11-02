@@ -94,22 +94,62 @@
         };
 
         function renderUnityElement(){
-          w = $('#unity-element-wrapper').offsetWidth;
-          h = $('#unity-element-wrapper').offsetHeight;
+          var w = $('#unity-element-wrapper').offsetWidth;
+          var h = $('#unity-element-wrapper').offsetHeight;
           document.getElementById('canvas').setAttribute("width", w - 30);
           document.getElementById('canvas').setAttribute("height", h - 30);
           console.log("DONE!!!!!!!!!!!!");
         }
 
+        function updateAnchorHref(prevId, nextId){
+          var searchClass = urlParam("class");
+          var puppetId = urlParam("puppetId");
+          var prevAnchor = $('#prev-anchor');
+          var nextAnchor = $('#next-anchor');
+          if (prevId !== undefined) {
+            prevAnchor.prop("href", "/puppet.html?puppetId="+prevId+"&class="+searchClass);
+          } else {
+            prevAnchor.hide();
+          }
+          if (nextId) {
+            nextAnchor.prop("href", "/puppet.html?puppetId="+nextId+"&class="+searchClass);
+          } else {
+            nextAnchor.hide();
+          }
+        }
+
         function render(){
+            var searchClass = urlParam("class");
+            var puppetId = urlParam("puppetId");
             $.get('data.json', function(puppets) {
-                var puppetId = urlParam("puppetId");
-                console.log("Index:", puppetId);
-                var puppet = puppets[puppetId];
-                renderImagesTab(puppet);
-                renderInfoTab(puppet);
-                renderPageTitle(puppet);
-                renderHeader();
+              puppets = $.map(puppets, (el, index) => {
+                el.index = index;
+                return el;
+              });
+              searchClass = searchClass?searchClass:"ASIAN";
+              puppets = puppets.filter((el)=>{
+                caseInsensitiveCollection = el.collection.toUpperCase();
+                searchClass = searchClass.toUpperCase();
+                return caseInsensitiveCollection.indexOf(searchClass) >= 0;
+              });
+              console.log("Index:", puppetId);
+              var puppet = puppets.find((puppet)=> (puppet.index == puppetId));
+              renderImagesTab(puppet);
+              renderInfoTab(puppet);
+              renderPageTitle(puppet);
+              renderHeader();
+              console.log("[TANMAY] puppetsFiltered: ", puppets);
+              var prevId = undefined, nextId = undefined;
+              for (i=0; i<puppets.length; i++) {
+                if (puppets[i+1] && puppets[i+1].index == puppetId){
+                  prevId = puppets[i].index;
+                }
+                if (puppets[i-1] && puppets[i-1].index == puppetId){
+                  nextId = puppets[i].index;
+                }
+              }
+              console.log("[TANMAY] prevId: ", prevId, "nextId", nextId);
+              updateAnchorHref(prevId, nextId);
                 // renderUnityElement();
             });
         };
@@ -134,7 +174,8 @@
     </div>
   </div>
 
-  <div class="container">    
+  <a id="prev-anchor" href="#"><span class="glyphicon glyphicon-triangle-left" id="left-nav-icon"></span></a>
+  <div class="container">
     <!-- Body –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="row" id ="main-body">
       <div class="col-md-8" id="unity-element-wrapper">
@@ -178,7 +219,8 @@
       </div>
     </div>
   </div>
-
+  <a id="next-anchor" href="#"><span class="glyphicon glyphicon-triangle-right" id="right-nav-icon"></span></a>
+  
   <div id="imageCarousel" class="modal fade" role="dialog">
       <div class="modal-dialog">
     

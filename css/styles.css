@@ -80,7 +80,19 @@ body{
     margin-bottom: 20px;
 }
 
+#left-nav-icon{
+    position: absolute;
+    top: 50%;
+    left: 1.5%;
+    font-size: 3em;
+}
 
+#right-nav-icon{
+    position: absolute;
+    top: 50%;
+    right: 1.5%;
+    font-size: 3em;
+}
 /**ICO MOON**/
 @font-face {
     font-family: 'icomoon';
