@@ -1,161 +1,170 @@
 [{
-    "name":"Puppet 2003.006",
+    "name":"Nakula",
+    "description":"Nakula is a shadow puppet with a central rod, gold body, black face, and black hair that is pulled to the back and upwards. The patterned wrap at the waist is red and green. Both arms are jointed at the shoulders and elbows with a rod at each hand, and the feet are wide apart. Used to tell stories from both the Mahabharata and the Ramayana, as well as local stories based on the legends from Cirebon.",
     "collection":"ASIAN",
-    "description":"Some long description goes here. I don't know what I am doing, I am only wasting time here.",
-    "info":[{
-        "key":"Repair",
-        "value":"Some Value"
-    },{
-        "key":"Accession#",
-        "value":"2003.006"
-    },{
-        "key":"Category",
-        "value":"9-Recreational Artifacts"
-    },{
-        "key":"Subcategory Othername",
-        "value":"Public Entertainment Device"
-    },{
-        "key":"Received as",
-        "value":"Transfer"
-    },{
-        "key":"Accession date",
-        "value": "02/07/03"
-    },{
-        "key":"Cataloged by",
-        "value":"McCarriagher, Melissa"
-    },{
-        "key":"Source",
-        "value":"Sarasota Opera Association, Inc."
-    },{
-        "key":"Catalog date",
-        "value":"07/29/2009"
-    },{
-        "key":"Creditline",
-        "value":"Gift of the Sarasota Opera Association, Inc,  from the Marian McKennon Collection"
-    },{
-        "key":"Home loc",
-        "value":"Museum Storage 2nd Floor FF2-F"
-    }],    
     "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png"
+    "imageTitle":"./img/img_avatar1.png",
+    "info":[
+        { "key":"Accession Number",      "value":"1999.001"}, 
+        { "key":"Category",              "value":"9: Recreational Artifacts"}, 
+        { "key":"Subcategory Othername", "value":"Public Entertainment Device"}, 
+        { "key":"Received as",           "value":"Donation"}, 
+        { "key":"Accession date",        "value":"03/12/1999"}, 
+        { "key":"Cataloged by",          "value":"McCarriagher, Melissa"}, 
+        { "key":"Catalog date",          "value":"06/12/2008"}, 
+        { "key":"Source",                "value":"Creditline, Bailey, Conner/Brouillette, Lisa A., Gift of Conner Bailey and Lisa Ann Brouillette"}, 
+        { "key":"Home loc",              "value":"Museum Storage: 2nd Floor:FF1-F"}, 
+        { "key":"Date",                  "value":"1924 - 1963"}, 
+        { "key":"Condition",             "value":"Poor"}
+    ]
+},{
+    "name": "Mobarak",
+    "description": "This is a string puppet. The head, hands, and feet are black wood. The face is depicted with white outlines. The top of the head is flat and bald. The clothing is red fabric. The shirt is long sleeved with a small white pattern. The pants are solid red and reach to the ankle. Kasperl is a traditional Bavarian male marionette. His carved wood head is painted with a red nose and cheeks. Additional painted features include thin brown eyebrows, blue eyes and a brown beard and hair. His hands and feet are also wooden. On his feet are white socks and black shoes. He wears a green pointed hat with red trim. He wears a red coat with gold trim and buttons, a green vest with red trim and yellow pants. There is a black and gold belt at his waist, and ruffled lace around his collar and cuffs. His strings are connected at the head, arms and legs",
+    "collection": "ASIAN",
+    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
+    "imageTitle":"./img/img_avatar1.png",
+    "info": [
+        {"key":"Accession Number",      "value":"2006.001"},
+        {"key":"Category",              "value":"9: Recreational Artifacts" },
+        {"key":"Subcategory Othername", "value":"Public Entertainment Device"},
+        {"key":"Received as",           "value":"Donation"},
+        {"key":"Accession date",        "value":"12/27/2006"},
+        {"key":"Cataloged by",          "value":"McCarriagher, Melissa"},
+        {"key":"Catalog date",          "value":"07/15/2008"},
+        {"key":"Source",                "value":"Creditline, European"},
+        {"key":"Home loc",              "value":"Museum Storage: 2nd Floor:G19-B:EUR.004"},
+        {"key":"Date",                  "value":"circa 1940"},
+        {"key":"Condition",             "value":"Fair"}
+    ]
 }, {
-    "name":"Puppet 2003.006",
-    "collection":"ASIAN",
-    "description":"Some long description goes here. I don't know what I am doing, I am only wasting time here.",
-    "info":[{
-        "key":"Collection",
-        "value":"Asian"
-    },{
-        "key":"Accession#",
-        "value":"2003.006"
-    },{
-        "key":"Category",
-        "value":"9-Recreational Artifacts"
-    },{
-        "key":"Subcategory Othername",
-        "value":"Public Entertainment Device"
-    },{
-        "key":"Received as",
-        "value":"Transfer"
-    },{
-        "key":"Accession date",
-        "value": "02/07/03"
-    },{
-        "key":"Cataloged by",
-        "value":"McCarriagher, Melissa"
-    },{
-        "key":"Source",
-        "value":"Sarasota Opera Association, Inc."
-    },{
-        "key":"Catalog date",
-        "value":"07/29/2009"
-    },{
-        "key":"Creditline",
-        "value":"Gift of the Sarasota Opera Association, Inc,  from the Marian McKennon Collection"
-    },{
-        "key":"Home loc",
-        "value":"Museum Storage 2nd Floor FF2-F"
-    }],    
+    "name": "Brown Dog",
+    "description": "This rod puppet is a wooden dog that moves his head when a string is pulled.",
+    "collection": "AMERICAS",
     "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png"
+    "imageTitle":"./img/img_avatar1.png",
+    "info": [
+        {"key":"Accession Number",       "value":"1998.003"},
+        {"key":"Category",               "value":"9: Recreational Artifacts"},
+        {"key":"Subcategory Othername",  "value":"Public Entertainment Device"},
+        {"key":"Received as",            "value":"Bequest"},
+        {"key":"Accession date",         "value":"12/07/1998"},
+        {"key":"Cataloged by",           "value":"McCarriagher, Melissa"},
+        {"key":"Catalog date",           "value":"09/24/2008"},
+        {"key":"Source",                 "value":"McPharlin, Marjorie B., Gift of Marjorie B. McPharlin"},
+        {"key":"Home loc",               "value":"Museum Storage: 2nd Floor:G13-B"},
+        {"key":"Date",                   "value":"20th Century"},
+        {"key":"Condition",              "value":"Good/Stable"}
+    ]
 }, {
-    "name":"Puppet 2003.006",
-    "collection":"ASIAN",
-    "description":"Some long description goes here. I don't know what I am doing, I am only wasting time here.",
-    "info":[{
-        "key":"Collection",
-        "value":"Asian"
-    },{
-        "key":"Accession#",
-        "value":"2003.006"
-    },{
-        "key":"Category",
-        "value":"9-Recreational Artifacts"
-    },{
-        "key":"Subcategory Othername",
-        "value":"Public Entertainment Device"
-    },{
-        "key":"Received as",
-        "value":"Transfer"
-    },{
-        "key":"Accession date",
-        "value": "02/07/03"
-    },{
-        "key":"Cataloged by",
-        "value":"McCarriagher, Melissa"
-    },{
-        "key":"Source",
-        "value":"Sarasota Opera Association, Inc."
-    },{
-        "key":"Catalog date",
-        "value":"07/29/2009"
-    },{
-        "key":"Creditline",
-        "value":"Gift of the Sarasota Opera Association, Inc,  from the Marian McKennon Collection"
-    },{
-        "key":"Home loc",
-        "value":"Museum Storage 2nd Floor FF2-F"
-    }],    
+    "name": "Kasperl",
+    "description": "Kasperl is a traditional Bavarian male marionette. His carved wood head is painted with a red nose and cheeks. Additional painted features include thin brown eyebrows, blue eyes and a brown beard and hair. His hands and feet are also wooden. On his feet are white socks and black shoes. He wears a green pointed hat with red trim. He wears a red coat with gold trim and buttons, a green vest with red trim and yellow pants. There is a black and gold belt at his waist, and ruffled lace around his collar and cuffs. His strings are connected at the head, arms and legs",
+    "collection": "EUROPEAN",
     "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png"
+    "imageTitle":"./img/img_avatar1.png",
+    "info":[
+        {"key":"Accession Number",       "value":"1980.001"},
+        {"key":"Category",               "value":"9: Recreational Artifacts"},
+        {"key":"Subcategory Othername",  "value":"Public Entertainment Device"},
+        {"key":"Received as",            "value":"Donation"},
+        {"key":"Cataloged by",           "value":"McCarriagher, Melissa Staub, Nancy L."},
+        {"key":"Catalog date",           "value":"07/10/2008"},
+        {"key":"Source",                 "value":"Gift of Nancy Lohman Staub"},
+        {"key":"Home loc",               "value":"Museum Storage: 2nd Floor:G19-B:EUR.004"},
+        {"key":"Date",                   "value":"circa 1940"},
+        {"key":"Condition",              "value":"Fair"}
+    ]
 }, {
-    "name":"Tanmay",
-    "collection":"AMERICAS",
-    "description":"Some long description goes here. I don't know what I am doing, I am only wasting time here.",
-    "info":[{
-        "key":"Repair",
-        "value":"Some Value"
-    },{
-        "key":"Accession#",
-        "value":"2003.006"
-    },{
-        "key":"Category",
-        "value":"9-Recreational Artifacts"
-    },{
-        "key":"Subcategory Othername",
-        "value":"Public Entertainment Device"
-    },{
-        "key":"Received as",
-        "value":"Transfer"
-    },{
-        "key":"Accession date",
-        "value": "02/07/03"
-    },{
-        "key":"Cataloged by",
-        "value":"McCarriagher, Melissa"
-    },{
-        "key":"Source",
-        "value":"Sarasota Opera Association, Inc."
-    },{
-        "key":"Catalog date",
-        "value":"07/29/2009"
-    },{
-        "key":"Creditline",
-        "value":"Gift of the Sarasota Opera Association, Inc,  from the Marian McKennon Collection"
-    },{
-        "key":"Home loc",
-        "value":"Museum Storage 2nd Floor FF2-F"
-    }],    
+    "name": "Trixie la Brique",
+    "description": "This found object puppet is entitled 'Trixie La Brique' performed as a trapeze artist in 'The Brick Brothers' Circus'.  She is a terra cotta colored brick with ten holes perforating her body.  Her costume is a pink and silver tutu with a zigzag hem line",
+    "collection": "AMERICAS",
     "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png"
+    "imageTitle":"./img/img_avatar1.png",
+    "info":[
+        {"key":"Accession Number",         "value":"1981.003"},
+        {"key":"Category",                 "value":"9: Recreational Artifacts"},
+        {"key":"Subcategory Othername",    "value":"Public Entertainment Device"},
+        {"key":"Received as",              "value":"Donation"},
+        {"key":"Cataloged by",             "value":"McCarriagher, Melissa"},
+        {"key":"Catalog date",             "value":"07/25/2008"},
+        {"key":"Source",                   "value":"Puppetmongers Theatre"},
+        {"key":"Home loc",                 "value":"Museum Storage: 2nd Floor:BC2:A"},
+        {"key":"Date",                     "value":"1981"},
+        {"key":"Condition",                "value":"Fair"}
+    ]
+}, {
+    "name": "Pandu Dewa Nata",
+    "description": "Used to tell stories from both the Mahabharata and the Ramayana, as well as local stories based on the legends from Cirebon. Pandu Dewa Nata is a shadow puppet with a gold body, green face, and pulled back black hair that curves upward. The arms are mobile with a bracelet on each arm, and the feet are close together with anklets on the ankles. The wrap at the waist is patterned in gold and red.",
+    "collection": "ASIAN",
+    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
+    "imageTitle":"./img/img_avatar1.png",
+    "info":[
+        {"key":"Accession Number",         "value":"03/12/1999"},
+        {"key":"Category",                 "value":"9: Recreational Artifacts"},
+        {"key":"Subcategory Othername",    "value":"Public Entertainment Device"},
+        {"key":"Received as",              "value":"Donation"},
+        {"key":"Accession date",           "value":"03/12/1999"},
+        {"key":"Cataloged by",             "value":"McCarriagher, Melissa"},
+        {"key":"Catalog date",             "value":"06/12/2008"},
+        {"key":"Source",                   "value":"Bailey, Conner/Brouillette, Lisa A., Gift of Conner Bailey and Lisa Ann Brouillette"},
+        {"key":"Home loc",                 "value":"Museum Storage: 2nd Floor:FF1-F"},
+        {"key":"Date",                     "value":"1924 - 1963"},
+        {"key":"Condition",                "value":"Poor"}
+    ]
+}, {
+    "name": "Rahwana",
+    "description": "The shadow puppet is a male Indonesian Rahwana character. Rahwana is an immoral figure in Indonesian puppetry. Corrupt characters in Indonesian puppetry can be identified by facial features which appear on this figure. The features include red eyes, a large lengthy nose that is rounded at the tip.  This Rahwana character has a pink face and gold body. The outfit is boldly patterned in blues and red with white. Both arms are jointed at the shoulder and elbow. Each hand has a rod attached",
+    "collection": "ASIAN",
+    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
+    "imageTitle":"./img/img_avatar1.png",
+    "info":[
+        {"key":"Accession Number",         "value":"1994.003"},
+        {"key":"Category",                 "value":"9: Recreational Artifacts"},
+        {"key":"Subcategory Othername",    "value":"Public Entertainment Device"},
+        {"key":"Received as",              "value":"Donation"},
+        {"key":"Accession date",           "value":"12/01/1994"},
+        {"key":"Cataloged by",             "value":"McCarriagher, Melissa"},
+        {"key":"Catalog date",             "value":"03/27/2008"},
+        {"key":"Source",                   "value":"Walker-Abrams, Joan"},
+        {"key":"Home loc",                 "value":"Museum Storage: 2nd Floor:FF2-B"},
+        {"key":"Date",                     "value":"Unknown"},
+        {"key":"Condition",                "value":"Fair"}
+    ]
+}, {
+    "name": "Hanuman (Monkey King)",
+    "description": "This rod puppet is entitled 'Hanuman'.  He is the monkey king character in Indonesian puppet theatre.  The head and body are made of craved wood.  Notable features include white skin, pointy ears, and an open red mouth that reveals teeth. His hair is black and descends out of a gold headdress into a curl at the top of his head. He has a bare chest, and wears only a print skirt with a thick waistband and a necklace. The hands are attached to control rods",
+    "collection": "ASIAN",
+    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
+    "imageTitle":"./img/img_avatar1.png",
+    "info":[
+        {"key":"Accession Number",         "value":"1992.001"},
+        {"key":"Category",                 "value":"9: Recreational Artifacts"},
+        {"key":"Subcategory Othername",    "value":"Public Entertainment Device"},
+        {"key":"Received as",              "value":"Donation"},
+        {"key":"Accession date",           "value":"12/20/1992"},
+        {"key":"Cataloged by",             "value":"McCarriagher, Melissa"},
+        {"key":"Catalog date",             "value":"03/25/2008"},
+        {"key":"Source",                   "value":"Wilcox, Caroly, Gift of Caroly Wilcox"},
+        {"key":"Home loc",                 "value":"Museum Storage: 2nd Floor:G5-C"},
+        {"key":"Date",                     "value":"late 20th Century"},
+        {"key":"Condition",                "value":"Fair"}
+    ]
+}, {
+    "name": "Pahlevan Kachal",
+    "description": "Hand puppet with a wooden head and cloth body. The wooden head has eyes, a nose, ears, and a moustache carved into it. The head is painted dark yellow with brown eyes and a brown moustache. No hair. The clothing consists of a tunic with a green, blue, and yellow paisley/flower design, as well as an undershirt and pants with a grey and green paisley design. Around the outfit is a brown leather belt with light brown thread stitching",
+    "collection": "ASIAN",
+    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
+    "imageTitle":"./img/img_avatar1.png",
+    "info":[
+        {"key":"Accession Number",         "value":"2014.010"},
+        {"key":"Category",                 "value":"9: Recreational Artifacts"},
+        {"key":"Subcategory Othername",    "value":"Public Entertainment Device"},
+        {"key":"Received as",              "value":"Purchase"},
+        {"key":"Accession date",           "value":"07/23/2014"},
+        {"key":"Cataloged by",             "value":"Smith, Athena"},
+        {"key":"Catalog date",             "value":"08/28/2014"},
+        {"key":"Source",                   "value":"The Center for Puppetry Arts"},
+        {"key":"Home loc",                 "value":"Museum Storage: 2nd Floor:G3-B"},
+        {"key":"Date",                     "value":"2014"},
+        {"key":"Condition",                "value":"Good/Stable"}
+    ]
 }]
