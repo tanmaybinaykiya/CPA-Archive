@@ -21,8 +21,8 @@
     "name": "Mobarak",
     "description": "This is a string puppet. The head, hands, and feet are black wood. The face is depicted with white outlines. The top of the head is flat and bald. The clothing is red fabric. The shirt is long sleeved with a small white pattern. The pants are solid red and reach to the ankle. Kasperl is a traditional Bavarian male marionette. His carved wood head is painted with a red nose and cheeks. Additional painted features include thin brown eyebrows, blue eyes and a brown beard and hair. His hands and feet are also wooden. On his feet are white socks and black shoes. He wears a green pointed hat with red trim. He wears a red coat with gold trim and buttons, a green vest with red trim and yellow pants. There is a black and gold belt at his waist, and ruffled lace around his collar and cuffs. His strings are connected at the head, arms and legs",
     "collection": "ASIAN",
-    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png",
+    "images":["./img/mobarak/20170202_103020.jpg", "./img/mobarak/20170202_103024.jpg", "./img/mobarak/20170202_103030.jpg", "./img/mobarak/20170202_103044.jpg", "./img/mobarak/20170202_103048.jpg", "./img/mobarak/20170202_103052.jpg", "./img/mobarak/20170202_103056.jpg"],
+    "imageTitle":"./img/mobarak/20170202_103020.jpg",
     "info": [
         {"key":"Accession Number",      "value":"2006.001"},
         {"key":"Category",              "value":"9: Recreational Artifacts" },
@@ -59,8 +59,8 @@
     "name": "Kasperl",
     "description": "Kasperl is a traditional Bavarian male marionette. His carved wood head is painted with a red nose and cheeks. Additional painted features include thin brown eyebrows, blue eyes and a brown beard and hair. His hands and feet are also wooden. On his feet are white socks and black shoes. He wears a green pointed hat with red trim. He wears a red coat with gold trim and buttons, a green vest with red trim and yellow pants. There is a black and gold belt at his waist, and ruffled lace around his collar and cuffs. His strings are connected at the head, arms and legs",
     "collection": "EUROPEAN",
-    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png",
+    "images":["./img/kasperl/IMG_2289.JPG", "./img/kasperl/IMG_2290.JPG", "./img/kasperl/IMG_2291.JPG", "./img/kasperl/IMG_2292.JPG", "./img/kasperl/IMG_2293.JPG", "./img/kasperl/IMG_2294.JPG", "./img/kasperl/IMG_2295.JPG", "./img/kasperl/IMG_2296.JPG"],
+    "imageTitle":"./img/kasperl/IMG_2289.JPG",
     "info":[
         {"key":"Accession Number",       "value":"1980.001"},
         {"key":"Category",               "value":"9: Recreational Artifacts"},
@@ -133,8 +133,8 @@
     "name": "Hanuman (Monkey King)",
     "description": "This rod puppet is entitled 'Hanuman'.  He is the monkey king character in Indonesian puppet theatre.  The head and body are made of craved wood.  Notable features include white skin, pointy ears, and an open red mouth that reveals teeth. His hair is black and descends out of a gold headdress into a curl at the top of his head. He has a bare chest, and wears only a print skirt with a thick waistband and a necklace. The hands are attached to control rods",
     "collection": "ASIAN",
-    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png",
+    "images":["./img/hanuman/IMG_2333.JPG", "./img/hanuman/IMG_2334.JPG", "./img/hanuman/IMG_2335.JPG", "./img/hanuman/IMG_2336.JPG", "./img/hanuman/IMG_2337.JPG", "./img/hanuman/IMG_2338.JPG", "./img/hanuman/IMG_2339.JPG", "./img/hanuman/IMG_2340.JPG", "./img/hanuman/IMG_2341.JPG"],
+    "imageTitle":"./img/hanuman/IMG_2333.JPG",
     "info":[
         {"key":"Accession Number",         "value":"1992.001"},
         {"key":"Category",                 "value":"9: Recreational Artifacts"},
