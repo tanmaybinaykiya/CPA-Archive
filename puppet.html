@@ -39,6 +39,15 @@
         {{/images}}
     </script>
 
+    <script id="images-slideshow-template" type="x-tmpl-mustache">
+      {{#images}}
+      {{#isActive}} <div class="item active"> {{/isActive}}
+      {{^isActive}} <div class="item"> {{/isActive}}
+        <img src={{location}} style="width:100%;">
+      </div>
+      {{/images}}
+    </script>
+
     <script id="page-title-template" type="x-tmpl-mustache">
         {{name}}
     </script>
@@ -67,13 +76,16 @@
         Mustache.parse(infoTabTemplate);                            // optional, speeds up future uses
         var pageTitleTemplate = $('#page-title-template').html();
         Mustache.parse(pageTitleTemplate);                          // optional, speeds up future uses
+        var imagesSlideshowTemplate = $('#images-slideshow-template').html();
+        Mustache.parse(imagesSlideshowTemplate);                          // optional, speeds up future uses
+        
 
         function renderHeader(){
             // $("#header-wrapper").load("header.html");
             var searchClass = urlParam("class");
             searchClass = searchClass?searchClass:"ASIAN";
             var element = $(document.getElementById(searchClass));
-            console.log("el:", element);
+            // console.log("el:", element);
             element.addClass("selected");
         }
 
@@ -93,12 +105,26 @@
             $('.modal-title').html(pageTitleRendered);
         };
 
+        function renderImagesSlideshow(puppet){
+          puppet.images = puppet.images
+          .map((img) => {
+              a = {}; 
+              a.location=img; 
+              a.isActive = false; 
+              return a;
+            });
+          puppet.images[0].isActive = true;
+          // console.log("puppetImages", puppet.images);
+          var imagesSlideshowRendered = Mustache.render(imagesSlideshowTemplate, puppet);
+          $('#carousel-inner').html(imagesSlideshowRendered);
+        }
+
         function renderUnityElement(){
           var w = $('#unity-element-wrapper').offsetWidth;
           var h = $('#unity-element-wrapper').offsetHeight;
           document.getElementById('canvas').setAttribute("width", w - 30);
           document.getElementById('canvas').setAttribute("height", h - 30);
-          console.log("DONE!!!!!!!!!!!!");
+          // console.log("DONE!!!!!!!!!!!!");
         }
 
         function updateAnchorHref(prevId, nextId){
@@ -132,13 +158,14 @@
                 searchClass = searchClass.toUpperCase();
                 return caseInsensitiveCollection.indexOf(searchClass) >= 0;
               });
-              console.log("Index:", puppetId);
+              // console.log("Index:", puppetId);
               var puppet = puppets.find((puppet)=> (puppet.index == puppetId));
               renderImagesTab(puppet);
               renderInfoTab(puppet);
               renderPageTitle(puppet);
               renderHeader();
-              console.log("[TANMAY] puppetsFiltered: ", puppets);
+              renderImagesSlideshow(puppet);
+              // console.log("[TANMAY] puppetsFiltered: ", puppets);
               var prevId = undefined, nextId = undefined;
               for (i=0; i<puppets.length; i++) {
                 if (puppets[i+1] && puppets[i+1].index == puppetId){
@@ -148,7 +175,7 @@
                   nextId = puppets[i].index;
                 }
               }
-              console.log("[TANMAY] prevId: ", prevId, "nextId", nextId);
+              // console.log("[TANMAY] prevId: ", prevId, "nextId", nextId);
               updateAnchorHref(prevId, nextId);
                 // renderUnityElement();
             });
@@ -184,7 +211,7 @@
       </div>
       <script type="text/javascript">
         var callback = function (a,b,c){
-          console.log("Unity callback called: ", a,b,c);
+          // console.log("Unity callback called: ", a,b,c);
         }
 
         var Module = {
@@ -233,7 +260,7 @@
           <div class="modal-body">
               <div id="myCarousel" class="carousel slide" data-ride="carousel">
                   <!-- Wrapper for slides -->
-                  <div class="carousel-inner">
+                  <div class="carousel-inner" id ="carousel-inner">
                     <div class="item active">
                       <img src="img/img_avatar1.png" style="width:100%;">
                     </div>

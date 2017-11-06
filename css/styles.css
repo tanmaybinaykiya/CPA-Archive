@@ -85,6 +85,7 @@ body{
     top: 50%;
     left: 1.5%;
     font-size: 3em;
+    color: #61c6ba;
 }
 
 #right-nav-icon{
@@ -92,7 +93,14 @@ body{
     top: 50%;
     right: 1.5%;
     font-size: 3em;
+    color: #61c6ba;
 }
+
+#images img{
+    margin-bottom: 10px;
+}
+
+
 /**ICO MOON**/
 @font-face {
     font-family: 'icomoon';
