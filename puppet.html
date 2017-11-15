@@ -64,125 +64,15 @@
         {{/info}}
     </script>
 
-    <script>
-        function urlParam(name) {
-            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-            return results?results[1] : 0;
-        };
-
-        var imagesTabTemplate = $('#images-template').html();
-        Mustache.parse(imagesTabTemplate);                          // optional, speeds up future uses
-        var infoTabTemplate = $('#info-template').html();
-        Mustache.parse(infoTabTemplate);                            // optional, speeds up future uses
-        var pageTitleTemplate = $('#page-title-template').html();
-        Mustache.parse(pageTitleTemplate);                          // optional, speeds up future uses
-        var imagesSlideshowTemplate = $('#images-slideshow-template').html();
-        Mustache.parse(imagesSlideshowTemplate);                          // optional, speeds up future uses
-        
-
-        function renderHeader(){
-            // $("#header-wrapper").load("header.html");
-            var searchClass = urlParam("class");
-            searchClass = searchClass?searchClass:"ASIAN";
-            var element = $(document.getElementById(searchClass));
-            // console.log("el:", element);
-            element.addClass("selected");
-        }
-
-        function renderImagesTab(puppet){
-            var imagesTabRendered = Mustache.render(imagesTabTemplate, puppet);
-            $('#images').html(imagesTabRendered);
-        };
-
-        function renderInfoTab(puppet){
-            var infoTabRendered = Mustache.render(infoTabTemplate, puppet);
-            $('#info').html(infoTabRendered);
-        };
-
-        function renderPageTitle(puppet){
-            var pageTitleRendered = Mustache.render(pageTitleTemplate, puppet);
-            $('#page-title').html(pageTitleRendered);
-            $('.modal-title').html(pageTitleRendered);
-        };
-
-        function renderImagesSlideshow(puppet){
-          puppet.images = puppet.images
-          .map((img) => {
-              a = {}; 
-              a.location=img; 
-              a.isActive = false; 
-              return a;
-            });
-          puppet.images[0].isActive = true;
-          // console.log("puppetImages", puppet.images);
-          var imagesSlideshowRendered = Mustache.render(imagesSlideshowTemplate, puppet);
-          $('#carousel-inner').html(imagesSlideshowRendered);
-        }
-
-        function renderUnityElement(){
-          var w = $('#unity-element-wrapper').offsetWidth;
-          var h = $('#unity-element-wrapper').offsetHeight;
-          document.getElementById('canvas').setAttribute("width", w - 30);
-          document.getElementById('canvas').setAttribute("height", h - 30);
-          // console.log("DONE!!!!!!!!!!!!");
-        }
-
-        function updateAnchorHref(prevId, nextId){
-          var searchClass = urlParam("class");
-          var puppetId = urlParam("puppetId");
-          var prevAnchor = $('#prev-anchor');
-          var nextAnchor = $('#next-anchor');
-          if (prevId !== undefined) {
-            prevAnchor.prop("href", "/puppet.html?puppetId="+prevId+"&class="+searchClass);
-          } else {
-            prevAnchor.hide();
-          }
-          if (nextId !== undefined) {
-            nextAnchor.prop("href", "/puppet.html?puppetId="+nextId+"&class="+searchClass);
-          } else {
-            nextAnchor.hide();
-          }
-        }
-
-        function render(){
-            var searchClass = urlParam("class");
-            var puppetId = urlParam("puppetId");
-            $.get('data.json', function(puppets) {
-              puppets = $.map(puppets, (el, index) => {
-                el.index = index;
-                return el;
-              });
-              searchClass = searchClass?searchClass:"ASIAN";
-              puppets = puppets.filter((el)=>{
-                caseInsensitiveCollection = el.collection.toUpperCase();
-                searchClass = searchClass.toUpperCase();
-                return caseInsensitiveCollection.indexOf(searchClass) >= 0;
-              });
-              // console.log("Index:", puppetId);
-              var puppet = puppets.find((puppet)=> (puppet.index == puppetId));
-              renderImagesTab(puppet);
-              renderInfoTab(puppet);
-              renderPageTitle(puppet);
-              renderHeader();
-              renderImagesSlideshow(puppet);
-              // console.log("[TANMAY] puppetsFiltered: ", puppets);
-              var prevId = undefined, nextId = undefined;
-              for (i=0; i<puppets.length; i++) {
-                if (puppets[i+1] && puppets[i+1].index == puppetId){
-                  prevId = puppets[i].index;
-                }
-                if (puppets[i-1] && puppets[i-1].index == puppetId){
-                  nextId = puppets[i].index;
-                }
-              }
-              // console.log("[TANMAY] prevId: ", prevId, "nextId", nextId);
-              updateAnchorHref(prevId, nextId);
-                // renderUnityElement();
-            });
-        };
-
+    <script id="unity-canvas-template" type="x-tmpl-mustache">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" width="750" height="500"></canvas>
     </script>
 
+    <script id="unity-image-template" type="x-tmpl-mustache">
+        <img id="unity-image" src="{{imageTitle}}"/>
+    </script>
+
+    <script src="./js/scripts.js"></script>
 </head>
 <body onload="render()">
   <!-- HEADER –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -209,23 +99,6 @@
         <!-- <span>UNITY is loading... </span> -->
         <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" width="750" height="500"></canvas>
       </div>
-      <script type="text/javascript">
-        var callback = function (a,b,c){
-          console.log("Unity callback called: ", a,b,c);
-        }
-
-        var Module = {
-          TOTAL_MEMORY: 268435456,
-          errorhandler: callback,   // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
-          compatibilitycheck: null,
-          backgroundColor: "#80858B",
-          splashStyle: "Dark",
-          dataUrl: "unity/Web_MonkeyKing.data",
-          codeUrl: "unity/Web_MonkeyKing.js",
-          asmUrl: "unity/Web_MonkeyKing.asm.js",
-          memUrl: "unity/Web_MonkeyKing.mem"
-        };
-      </script>
       <div class="col-md-4" id="tabs">
 
         <h3 id ="page-title"></h3>
@@ -303,6 +176,6 @@
       </div>
     </div>
   </div>
-  <script src="./js/UnityLoader.js"></script>
+  
 </body>
 </html>
