@@ -35,7 +35,9 @@
 
     <script id="images-template" type="x-tmpl-mustache">
         {{#images}}
-            <a href="#" data-toggle="modal" data-target="#imageCarousel"><img src={{.}} class="media-object col-md-4"></a>
+            <a href="#" class="image-gallery-image-wrapper col-md-4" data-toggle="modal" data-target="#imageCarousel">
+              <img src={{.}} class="media-object">
+            </a>
         {{/images}}
     </script>
 
