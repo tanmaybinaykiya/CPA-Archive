@@ -2,8 +2,8 @@
     "name":"Nakula",
     "description":"Nakula is a shadow puppet with a central rod, gold body, black face, and black hair that is pulled to the back and upwards. The patterned wrap at the waist is red and green. Both arms are jointed at the shoulders and elbows with a rod at each hand, and the feet are wide apart. Used to tell stories from both the Mahabharata and the Ramayana, as well as local stories based on the legends from Cirebon.",
     "collection":"ASIAN",
-    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png",
+    "images":["./img/nakul/5a57f450-d3e9-4ae1-8636-308397465491.jpg", "./img/nakul/607cc383-949c-4de6-932a-740061836700.jpg", "./img/nakul/612b60a9-99ab-4c46-a903-576918507156.jpg", "./img/nakul/668ddbf0-f023-4d8b-99a5-633130199199.jpg", "./img/nakul/a8d8356b-da83-405d-978b-209051921430.jpg", "./img/nakul/e60531f8-364c-4783-8c81-805745546490.jpg", "./img/nakul/fbe40843-112c-4d1e-9981-574493745320.jpg"],
+    "imageTitle":"./img/nakul/668ddbf0-f023-4d8b-99a5-633130199199.jpg",
     "info":[
         { "key":"Accession Number",      "value":"1999.001"}, 
         { "key":"Collector",             "value":"Bailey, Connor"}, 
@@ -14,7 +14,7 @@
         { "key":"Accession date",        "value":"03/12/1999"}, 
         { "key":"Cataloged by",          "value":"McCarriagher, Melissa"}, 
         { "key":"Catalog date",          "value":"06/12/2008"}, 
-        { "key":"Source",                "value":"Bailey, Conner/Brouillette, Lisa A., Gift of Conner Bailey and Lisa Ann Brouillette"}, 
+        { "key":"Source",                "value":"Bailey, Conner/Brouillette, Lisa A."}, 
         { "key":"Credit Line",           "value":"Gift of Conner Bailey and Lisa Ann Brouillette"}, 
         { "key":"Home loc",              "value":"Museum Storage: 2nd Floor:FF1-F"}, 
         { "key":"Year Range",            "value":"1924 - 1963"}, 
@@ -68,8 +68,8 @@
     "name": "Brown Dog",
     "description": "This rod puppet is a wooden dog that moves his head when a string is pulled.",
     "collection": "AMERICAS",
-    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png",
+    "images":["./img/brown-dog/7186600d-51a7-4134-89bf-644001551760.jpg", "./img/brown-dog/80c4df34-8a48-406c-9b97-139269578896.jpg", "./img/brown-dog/c00a3ae5-bdab-4a36-b5ef-964294203552.jpg"],
+    "imageTitle":"./img/brown-dog/7186600d-51a7-4134-89bf-644001551760.jpg",
     "info": [
         { "key":"Accession Number",      "value":"1998.003"},
         { "key":"Collector",             "value":"McPharlin, Marjorie Batchelder"},
@@ -98,8 +98,8 @@
     "name": "Kasperl",
     "description": "Kasperl is a traditional Bavarian male marionette. His carved wood head is painted with a red nose and cheeks. Additional painted features include thin brown eyebrows, blue eyes and a brown beard and hair. His hands and feet are also wooden. On his feet are white socks and black shoes. He wears a green pointed hat with red trim. He wears a red coat with gold trim and buttons, a green vest with red trim and yellow pants. There is a black and gold belt at his waist, and ruffled lace around his collar and cuffs. His strings are connected at the head, arms and legs",
     "collection": "EUROPEAN",
-    "images":["./img/kasperl/IMG_2289.JPG", "./img/kasperl/IMG_2290.JPG", "./img/kasperl/IMG_2291.JPG", "./img/kasperl/IMG_2292.JPG", "./img/kasperl/IMG_2293.JPG", "./img/kasperl/IMG_2294.JPG", "./img/kasperl/IMG_2295.JPG", "./img/kasperl/IMG_2296.JPG"],
-    "imageTitle":"./img/kasperl/IMG_2289.JPG",
+    "images":["./img/kasperl/IMG_2291.JPG", "./img/kasperl/IMG_2293.JPG", "./img/kasperl/IMG_2294.JPG", "./img/kasperl/IMG_2295.JPG", "./img/kasperl/IMG_2296.JPG"],
+    "imageTitle":"./img/kasperl/IMG_2291.JPG",
     "info":[
         { "key":"Accession Number",      "value":"1980.001"},
         { "key":"Category",              "value":"9: Recreational Artifacts"},
@@ -128,8 +128,8 @@
     "name": "Trixie la Brique",
     "description": "This found object puppet is entitled 'Trixie La Brique' performed as a trapeze artist in 'The Brick Brothers' Circus'.  She is a terra cotta colored brick with ten holes perforating her body.  Her costume is a pink and silver tutu with a zigzag hem line",
     "collection": "AMERICAS",
-    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png",
+    "images":["./img/trixie/IMG_7538.JPG", "./img/trixie/IMG_7539.JPG",  "./img/trixie/IMG_7541.JPG",  "./img/trixie/IMG_7555.JPG", "./img/trixie/IMG_7556.JPG"],
+    "imageTitle":"./img/trixie/IMG_7538.JPG",
     "info":[
         { "key":"Accession Number",         "value":"1981.003"},
         { "key":"Category",                 "value":"9: Recreational Artifacts"},
@@ -158,8 +158,8 @@
     "name": "Pandu Dewa Nata",
     "description": "Used to tell stories from both the Mahabharata and the Ramayana, as well as local stories based on the legends from Cirebon. Pandu Dewa Nata is a shadow puppet with a gold body, green face, and pulled back black hair that curves upward. The arms are mobile with a bracelet on each arm, and the feet are close together with anklets on the ankles. The wrap at the waist is patterned in gold and red.",
     "collection": "ASIAN",
-    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png",
+    "images":["./img/pandu/05066f6c-fa63-4dc4-8627-308049158197.jpg", "./img/pandu/38e1758c-8935-4dd4-85d1-515124404860.jpg", "./img/pandu/43a8aec5-2389-4803-a55d-604107674581.jpg", "./img/pandu/58c7c34d-6d5e-47fd-8386-541895801030.jpg", "./img/pandu/81045e80-b835-4f55-a1d4-162033742844.jpg", "./img/pandu/eecf77e4-9e60-4fc7-93c8-416095252090.jpg", "./img/pandu/faf7e0d7-851d-4bd3-b2f0-674721300827.jpg"],
+    "imageTitle":"./img/pandu/05066f6c-fa63-4dc4-8627-308049158197.jpg",
     "info":[
         { "key":"Accession Number",         "value":"1999.001"},
         { "key":"Accession Date",           "value":"03/12/1999"},
@@ -192,8 +192,8 @@
     "name": "Rahwana",
     "description": "The shadow puppet is a male Indonesian Rahwana character. Rahwana is an immoral figure in Indonesian puppetry. Corrupt characters in Indonesian puppetry can be identified by facial features which appear on this figure. The features include red eyes, a large lengthy nose that is rounded at the tip.  This Rahwana character has a pink face and gold body. The outfit is boldly patterned in blues and red with white. Both arms are jointed at the shoulder and elbow. Each hand has a rod attached",
     "collection": "ASIAN",
-    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png",
+    "images":["./img/rahwana/050d3bb0-4728-4819-9d89-740915333210.jpg", "./img/rahwana/2b101693-e425-4bb6-9c14-101379393716.jpg", "./img/rahwana/54d2ab5a-5d95-4485-a42f-654701149958.jpg", "./img/rahwana/619e0426-15d2-498c-8b63-350174126851.jpg", "./img/rahwana/a69ed13e-f0f2-41b3-a679-891655066500.jpg", "./img/rahwana/c7ca7a9e-7f3b-4825-b2c0-399916730512.jpg"],
+    "imageTitle":"./img/rahwana/050d3bb0-4728-4819-9d89-740915333210.jpg",
     "info":[
         { "key":"Accession Number",         "value":"1994.003"},
         { "key":"Category",                 "value":"9: Recreational Artifacts"},
@@ -226,7 +226,7 @@
         { "key":"Provenance",               "value":"Joan Walker-Abrams donated this shadow puppet to the Center for Puppetry Arts on December 1, 1994"}
     ]
 }, {
-    "name": "Hanuman (Monkey King)",
+    "name": "Hanuman",
     "description": "This rod puppet is entitled 'Hanuman'.  He is the monkey king character in Indonesian puppet theatre.  The head and body are made of craved wood.  Notable features include white skin, pointy ears, and an open red mouth that reveals teeth. His hair is black and descends out of a gold headdress into a curl at the top of his head. He has a bare chest, and wears only a print skirt with a thick waistband and a necklace. The hands are attached to control rods",
     "collection": "ASIAN",
     "images":["./img/hanuman/IMG_2351.JPG", "./img/hanuman/IMG_2379.JPG", "./img/hanuman/IMG_2383.JPG", "./img/hanuman/IMG_2387.JPG"],
@@ -269,8 +269,8 @@
     "name": "Pahlevan Kachal",
     "description": "Hand puppet with a wooden head and cloth body. The wooden head has eyes, a nose, ears, and a moustache carved into it. The head is painted dark yellow with brown eyes and a brown moustache. No hair. The clothing consists of a tunic with a green, blue, and yellow paisley/flower design, as well as an undershirt and pants with a grey and green paisley design. Around the outfit is a brown leather belt with light brown thread stitching",
     "collection": "ASIAN",
-    "images":["./img/img_avatar1.png", "./img/img_avatar1.png", "./img/img_avatar1.png"],
-    "imageTitle":"./img/img_avatar1.png",
+    "images":["./img/pahlevan-kachal/559f560b-3629-45db-a47d-412324774430.jpg", "./img/pahlevan-kachal/f5fad49b-c16c-48a0-8e88-889659210670.jpg", "./img/pahlevan-kachal/fb6897c3-4f41-4d88-b20f-280536059001.jpg"],
+    "imageTitle":"./img/pahlevan-kachal/559f560b-3629-45db-a47d-412324774430.jpg",
     "info":[
         { "key":"Accession Number",         "value":"2014.010"},
         { "key":"Category",                 "value":"9: Recreational Artifacts"},
@@ -294,5 +294,65 @@
         { "key":"Provenance",               "value":"Commissioned with funds donated by Nancy Lohman Staub. Created by Ms. Talie Tarighi through Poupak Azimpour."},
         { "key":"Artist",                   "value":"Tarighi, Talie Puppet Maker"}
 
+    ]
+}, {
+    "name":"Untitled",
+    "description":"",
+    "collection":"ASIAN",
+    "images":["./img/2003_006_070/61f59ad8-8ab5-45cb-a43a-501000278436.jpg", "./img/2003_006_070/8bc9241d-f57a-4bbb-8c32-242635322792.jpg", "./img/2003_006_070/a209a5f0-6b9b-46b1-9617-616496379210.jpg", "./img/2003_006_070/b6f8dfed-42df-4457-99ef-455320157159.jpg", "./img/2003_006_070/bfa9b0a8-798f-4194-b3cd-258011368329.jpg"],
+    "imageTitle":"./img/2003_006_070/61f59ad8-8ab5-45cb-a43a-501000278436.jpg",
+    "info":[
+        { "key":"Accession Number",      "value":"2003.006"}, 
+        { "key":"Category",              "value":"9: Recreational Artifacts"}, 
+        { "key":"Subcategory Othername", "value":"Public Entertainment Device"}, 
+        { "key":"Accession Date",        "value":"02/07/2003"}, 
+        { "key":"Received as",           "value":"Transfer"}, 
+        { "key":"Cataloged by",          "value":"McCarriagher, Melissa"}, 
+        { "key":"Catalog date",          "value":"07/29/2009"}, 
+        { "key":"Source",                "value":"Sarasota Opera Association, Inc"}, 
+        { "key":"Credit Line",           "value":"Gift of the Sarasota Opera Association, Inc, from the Marian McKennon Collection"}, 
+        { "key":"Home loc",              "value":"Museum Storage: 2nd Floor:FF2-F"}, 
+        { "key":"Collector",             "value":"Sarasota Opera Association, Inc."}, 
+        { "key":"Pl origin",             "value":"Asia/Indonesia"}, 
+        { "key":"Artist",                "value":"Unknown"}, 
+        { "key":"Height",                "value":"23.250 in"},
+        { "key":"Width",                 "value":"15.000 in"},
+        { "key":"Depth",                 "value":"00.250 in"},
+        { "key":"Material",              "value":"Leather"},
+        { "key":"Condition",             "value":"Good"},
+        { "key":"Condition by",          "value":"Hill, Christian"},
+        { "key":"Condition Date",        "value":"06/20/2016"},
+        { "key":"Condition Notes",       "value":"Tears, white spots on front , paint loss"},
+        { "key":"Provenance",            "value":"In February 2003, the Center for Puppetry Arts accepted a donation of 73 puppets and puppet related items from the Sarasota Opera Association, Inc. of Sarasota, Fla., which had been donated to them in 1995 by the late Marian McKennon."}
+    ]
+}, {
+    "name":"Untitled",
+    "description":"",
+    "collection":"ASIAN",
+    "images":["./img/2003_006_071/3ffde800-ea9f-47b8-8522-185382023106.jpg", "./img/2003_006_071/46e7d708-4a5c-48c9-b38a-441735424266.jpg", "./img/2003_006_071/56af5ec1-231c-4d13-9519-508160284038.jpg", "./img/2003_006_071/7bec96da-a22b-4174-897e-195434694437.jpg", "./img/2003_006_071/9d58c003-8790-4837-ae65-924480598240.jpg"],
+    "imageTitle":"./img/2003_006_071/3ffde800-ea9f-47b8-8522-185382023106.jpg",
+    "info":[
+        { "key":"Accession Number",      "value":"2003.006"}, 
+        { "key":"Category",              "value":"9: Recreational Artifacts"}, 
+        { "key":"Subcategory Othername", "value":"Public Entertainment Device"}, 
+        { "key":"Accession Date",        "value":"02/07/2003"}, 
+        { "key":"Received as",           "value":"Transfer"}, 
+        { "key":"Cataloged by",          "value":"McCarriagher, Melissa"}, 
+        { "key":"Catalog date",          "value":"07/29/2009"}, 
+        { "key":"Source",                "value":"Sarasota Opera Association, Inc"}, 
+        { "key":"Credit Line",           "value":"Gift of the Sarasota Opera Association, Inc, from the Marian McKennon Collection"}, 
+        { "key":"Home loc",              "value":"Museum Storage: 2nd Floor:FF2-F"}, 
+        { "key":"Collector",             "value":"Sarasota Opera Association, Inc."}, 
+        { "key":"Pl origin",             "value":"Asia/Indonesia"}, 
+        { "key":"Artist",                "value":"Unknown"}, 
+        { "key":"Height",                "value":"27.500 in"},
+        { "key":"Width",                 "value":"06.000 in"},
+        { "key":"Depth",                 "value":"00.500 in"},
+        { "key":"Material",              "value":"Leather"},
+        { "key":"Condition",             "value":"Good"},
+        { "key":"Condition by",          "value":"Hill, Christian"},
+        { "key":"Condition Date",        "value":"06/20/2016"},
+        { "key":"Condition Notes",       "value":"Warping, paint loss, flaking"},
+        { "key":"Provenance",            "value":"In February 2003, the Center for Puppetry Arts accepted a donation of 73 puppets and puppet related items from the Sarasota Opera Association, Inc. of Sarasota, Fla., which had been donated to them in 1995 by the late Marian McKennon."}
     ]
 }]
