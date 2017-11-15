@@ -37,7 +37,7 @@
         {{#puppets}}
         <a href="puppet.html?puppetId={{index}}&class={{collection}}" >
             <div class="col-md-2">
-                <img src={{imageTitle}} class="media-object col-md-12">
+                <div class="search-result-img-wrapper"><img src={{imageTitle}} class="media-object col-md-12"></div>
                 <span class="col-md-12" style= "text-align:center">{{name}}</span>
             </div>
         </a>
@@ -77,13 +77,15 @@
                         return caseInsensitiveName.indexOf(searchKey) >= 0;
                     });
                 }
-                searchClass = searchClass?searchClass:"ASIAN";
-                console.log("searchClass: ", searchClass);
-                puppets = puppets.filter((el)=>{
-                    caseInsensitiveCollection = el.collection.toUpperCase();
-                    searchClass = searchClass.toUpperCase();
-                    return caseInsensitiveCollection.indexOf(searchClass) >= 0;
-                });
+
+                if (searchClass){
+                    console.log("searchClass: ", searchClass);
+                    puppets = puppets.filter((el)=>{
+                        caseInsensitiveCollection = el.collection.toUpperCase();
+                        searchClass = searchClass.toUpperCase();
+                        return caseInsensitiveCollection.indexOf(searchClass) >= 0;
+                    });
+                }
                 var data = {"puppets": puppets};
                 console.log(searchKey, data);
                 var rendered = Mustache.render(template, data);
@@ -137,16 +139,15 @@
     </div>
 
   </div>
-    <!-- HEADER –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- FOOTER –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div id="footer">
     <div class="container">
       <div class="row">
-        <a class="col-md-2" href="#">Disclaimer</a>
-        <a class="col-md-2" href="mailto:nowhere@mozilla.org">Contact</a>
-        <a class="col-md-2" href="http://www.puppet.org/">CPA</a>
-        <a class="col-md-2" href="https://www.gatech.edu">Georgia Tech</a>
-        <a class="col-md-2" href="https://www.gatech.edu">Georgia Tech</a>
-        <a class="col-md-12" href="#">Some long text that spans multiple lines. Some long text that spans multiple lines Some long text that spans multiple lines</a>
+        <a class="col-md-2" href="#">Center for Puppetry Art</a>
+        <a class="col-md-2" href="http://www.gatech.edu/">Georgia Tech</a>
+        <a class="col-md-2" href="http://dwig.lmc.gatech.edu/ ">DWIG</a>
+        <a class="col-md-2" href="http://dwig.lmc.gatech.edu/projects/PuppetVR/ ">Project Link</a>
+        <a class="col-md-12" >Supported by: NEH Research and Development</a>
       </div>
     </div>
   </div>

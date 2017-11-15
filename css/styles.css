@@ -57,6 +57,11 @@ body{
     height: inherit;
 }
 
+.search-result-img-wrapper{
+    height: 124px;
+    display: flex;
+    align-items: center;
+}
 #tabs {
     height: inherit;    
 }
