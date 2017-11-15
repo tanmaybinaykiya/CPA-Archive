@@ -65,6 +65,9 @@
         function render(){
             var searchKey = urlParam("srch-term");
             var searchClass = urlParam("srch-class");
+            if(!searchKey && !searchClass){
+                searchClass = "ASIAN";
+            }
             $.get('data.json', function(puppets) {
                 puppets = $.map(puppets, (el, index) => {
                     el.index = index;
