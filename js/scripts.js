@@ -91,12 +91,17 @@ function loadScript(src, script, callback) {
 function renderUnityElement(puppet) {
     var elementWrapper = $('#unity-element-wrapper');
     if (puppet.unity) {
-        var unityCanvasTemplateRendered = Mustache.render(unityCanvasTemplate, {});
+        unityElHeight = elementWrapper.height();
+        unityElWidth = elementWrapper.width();
+        var unityCanvasTemplateRendered = Mustache.render(unityCanvasTemplate, {width:unityElWidth, height:unityElHeight});
         Module.dataUrl = puppet.unity.dataUrl;
         Module.codeUrl = puppet.unity.codeUrl;
         Module.asmUrl = puppet.unity.asmUrl;
         Module.memUrl = puppet.unity.memUrl;
+        console.log("unityCanvasTemplateRendered: ", unityCanvasTemplateRendered);
+        // unityCanvasTemplateRendered.attr("height", 300);
         elementWrapper.html(unityCanvasTemplateRendered);
+        
         console.log("DONE!");
         var scriptEl;
         loadScript('./js/UnityLoader.js', scriptEl, function () {
