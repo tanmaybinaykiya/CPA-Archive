@@ -1,11 +1,10 @@
 # Center for Puppetry Arts: Puppet Archive
----
 
-## Execution
+## Deployment
 
-Can be locally run using any web server. 
+Can be run locally using any web server of your choice. A simple way is to run the following command in the project directory.
 ```sh
-python -m SimpleHTTPServer
+$ python -m SimpleHTTPServer
 ```
 The web app can now be viewed in any modern browser at [http://localhost:8000](http://localhost:8000)
 
