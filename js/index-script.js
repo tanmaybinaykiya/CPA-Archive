@@ -22,6 +22,7 @@ function render() {
         searchClass = "ASIAN";
     }
     $.get('data.json', function (puppets) {
+        puppets = JSON.parse(puppets);
         puppets = $.map(puppets, (el, index) => {
             el.index = index;
             return el;

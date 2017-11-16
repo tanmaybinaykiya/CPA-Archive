@@ -259,12 +259,7 @@
         { "key":"Material",                 "value":"Paint/Wood/Textile"},
         { "key":"Used",                     "value":"Performance/Wayang Gole"}
     ], 
-    "unity":{
-        "dataUrl": "unity/Web_MonkeyKing.data",
-        "codeUrl": "unity/Web_MonkeyKing.js",
-        "asmUrl": "unity/Web_MonkeyKing.asm.js",
-        "memUrl": "unity/Web_MonkeyKing.mem"
-    }
+    "unityDataFile":"unity/monkeyking/MonkeyKing.json"
 }, {
     "name": "Pahlevan Kachal",
     "description": "Hand puppet with a wooden head and cloth body. The wooden head has eyes, a nose, ears, and a moustache carved into it. The head is painted dark yellow with brown eyes and a brown moustache. No hair. The clothing consists of a tunic with a green, blue, and yellow paisley/flower design, as well as an undershirt and pants with a grey and green paisley design. Around the outfit is a brown leather belt with light brown thread stitching",
