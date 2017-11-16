@@ -84,4 +84,4 @@ Simply replace the following blob with the appropriate contents and add it to da
     * fonts/: hosts fonts used for icons
 * img/: Hosts all images required for the app
 
-> Developed by: [Tanmay Binaykiya](btanmay@gatech.edu)
+> Developed by: [Tanmay Binaykiya](mailto:btanmay@gatech.edu)
