@@ -1,0 +1,11 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "IranianHand.data.unityweb",
+"asmCodeUrl": "IranianHand.asm.code.unityweb",
+"asmMemoryUrl": "IranianHand.asm.memory.unityweb",
+"asmFrameworkUrl": "IranianHand.asm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
