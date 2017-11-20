@@ -31,6 +31,9 @@ Mustache.parse(infoTabTemplate);                            // optional, speeds 
 var pageTitleTemplate = $('#page-title-template').html();
 Mustache.parse(pageTitleTemplate);                          // optional, speeds up future uses
 
+var imageLargeViewTemplate = $("#image-large-view-template").html();
+Mustache.parse(imageLargeViewTemplate);                          // optional, speeds up future uses
+
 var imagesSlideshowTemplate = $('#images-slideshow-template').html();
 Mustache.parse(imagesSlideshowTemplate);                          // optional, speeds up future uses
 
@@ -70,20 +73,6 @@ function renderPageTitle(puppet) {
     $('#page-title').html(pageTitleRendered);
     $('.modal-title').html(pageTitleRendered);
 };
-
-function renderImagesSlideshow(puppet) {
-    puppet.images = puppet.images
-        .map((img) => {
-            a = {};
-            a.location = img;
-            a.isActive = false;
-            return a;
-        });
-    puppet.images[0].isActive = true;
-    // console.log("puppetImages", puppet.images);
-    var imagesSlideshowRendered = Mustache.render(imagesSlideshowTemplate, puppet);
-    $('#carousel-inner').html(imagesSlideshowRendered);
-}
 
 function loadScript(src, script, callback) {
 
@@ -144,10 +133,18 @@ function updateAnchorHref(prevId, nextId) {
     }
 }
 
+function renderLargeImageView(){
+    $(".image-gallery-image-wrapper").click(function (){
+        var imageUrl = $(this).attr('data-imageUrl');
+        console.log("imageUrl: ", imageUrl);
+        imageLargeViewRendered = Mustache.render(imageLargeViewTemplate, {imageUrl:imageUrl});
+        $("#largeImage").html(imageLargeViewRendered);
+    });
+}
+
 function renderYoutubePlayer() {
 
     $(".video-gallery-image-wrapper").click(function (){
-        console.log($(this));
         var videoId = $(this).attr('data-videoId');
         console.log("videoId: ", videoId);
 
@@ -194,10 +191,10 @@ function render() {
         var puppet = puppets.find((puppet) => (puppet.index == puppetId));
         console.log("Selected puppet:", puppet);
         renderImagesTab(puppet);
+        renderLargeImageView();
         renderInfoTab(puppet);
         renderPageTitle(puppet);
         renderHeader();
-        renderImagesSlideshow(puppet);
         renderVideosGallery(puppet);
         renderYoutubePlayer();
         // if (puppet.youTubeVideoIds) {
