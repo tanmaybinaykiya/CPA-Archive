@@ -77,12 +77,14 @@
     </script>
 
     <script id="unity-canvas-template" type="x-tmpl-mustache">
-      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" width={{width}} height={{height}} ></canvas>
+      <div id="unity-element" class="col-md-8"></div>
     </script>
 
     <script id="unity-image-template" type="x-tmpl-mustache">
         <img id="unity-image" src="{{imageTitle}}"/>
     </script>
+
+    <script src="./js/UnityLoader.js"></script>
 
     <script src="./js/puppet-script.js"></script>
 </head>
@@ -94,11 +96,11 @@
           <span id="header-title" class="col-md-4" >Center For Puppetry Arts</span>
           
           <span id="header-explore" class="col-md-2">Explore other collections</span>
-          <a class="header-location col-md-1" id="AFRICAN" href="/index.html?srch-class=AFRICAN">African</a>
-          <a class="header-location col-md-1" id="AMERICAS" href="/index.html?srch-class=AMERICAS">Americas</a>
-          <a class="header-location col-md-1" id="ASIAN" href="/index.html?srch-class=ASIAN">Asian</a>
-          <a class="header-location col-md-1" id="EUROPEAN" href="/index.html?srch-class=EUROPEAN">European</a>
-          <a class="header-location col-md-2" id="MIDEAST" href="/index.html?srch-class=MIDEAST">Middle Eastern</a>
+          <a class="header-location col-md-1" id="AFRICAN" href="index.html?srch-class=AFRICAN">African</a>
+          <a class="header-location col-md-1" id="AMERICAS" href="index.html?srch-class=AMERICAS">Americas</a>
+          <a class="header-location col-md-1" id="ASIAN" href="index.html?srch-class=ASIAN">Asian</a>
+          <a class="header-location col-md-1" id="EUROPEAN" href="index.html?srch-class=EUROPEAN">European</a>
+          <a class="header-location col-md-2" id="MIDEAST" href="index.html?srch-class=MIDEAST">Middle Eastern</a>
       </div>
     </div>
   </div>
@@ -109,7 +111,7 @@
     <div class="row" id ="main-body">
       <div class="col-md-8" id="unity-element-wrapper">
         <!-- <span>UNITY is loading... </span> -->
-        <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" width="750" height="500"></canvas>
+        <div id="unity-element" class="col-md-12" ></div>
       </div>
       <div class="col-md-4" id="tabs">
 
@@ -170,7 +172,7 @@
     <div id="footer">
     <div class="container">
       <div class="row">
-          <a class="col-md-2" href="#">Center for Puppetry Art</a>
+          <a class="col-md-2" href="#">Center for Puppetry Arts</a>
           <a class="col-md-2" href="http://www.gatech.edu/">Georgia Tech</a>
           <a class="col-md-2" href="http://dwig.lmc.gatech.edu/ ">DWIG</a>
           <a class="col-md-2" href="http://dwig.lmc.gatech.edu/projects/PuppetVR/ ">Project Link</a>

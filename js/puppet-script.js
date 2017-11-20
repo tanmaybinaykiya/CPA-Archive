@@ -3,17 +3,17 @@ var callback = function (a, b, c) {
     console.log("Unity callback called: ", a, b, c);
 }
 
-var Module = {
-    TOTAL_MEMORY: 268435456,
-    errorhandler: callback,   // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
-    compatibilitycheck: null,
-    backgroundColor: "#80858B",
-    splashStyle: "Dark",
-    // dataUrl: "unity/Web_MonkeyKing.data",
-    // codeUrl: "unity/Web_MonkeyKing.js",
-    // asmUrl: "unity/Web_MonkeyKing.asm.js",
-    // memUrl: "unity/Web_MonkeyKing.mem"
-};
+// var Module = {
+//     TOTAL_MEMORY: 268435456,
+//     errorhandler: callback,   // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+//     compatibilitycheck: null,
+//     backgroundColor: "#80858B",
+//     splashStyle: "Dark",
+//     // dataUrl: "unity/Web_MonkeyKing.data",
+//     // codeUrl: "unity/Web_MonkeyKing.js",
+//     // asmUrl: "unity/Web_MonkeyKing.asm.js",
+//     // memUrl: "unity/Web_MonkeyKing.mem"
+// };
 
 function urlParam(name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -91,23 +91,26 @@ function loadScript(src, script, callback) {
 
 function renderUnityElement(puppet) {
     var elementWrapper = $('#unity-element-wrapper');
-    if (puppet.unity) {
-        unityElHeight = elementWrapper.height();
-        unityElWidth = elementWrapper.width();
-        var unityCanvasTemplateRendered = Mustache.render(unityCanvasTemplate, {width:unityElWidth, height:unityElHeight});
-        Module.dataUrl = puppet.unity.dataUrl;
-        Module.codeUrl = puppet.unity.codeUrl;
-        Module.asmUrl = puppet.unity.asmUrl;
-        Module.memUrl = puppet.unity.memUrl;
-        console.log("unityCanvasTemplateRendered: ", unityCanvasTemplateRendered);
+    if (puppet.unityDataFile) {
+        // var  scriptEl = {};
+        // loadScript('./js/UnityLoader.js', scriptEl, function () {
+
+        UnityLoader.instantiate("unity-element", puppet.unityDataFile);
+        // unityElHeight = elementWrapper.height();
+        // unityElWidth = elementWrapper.width();
+        // var unityCanvasTemplateRendered = Mustache.render(unityCanvasTemplate, {width:unityElWidth, height:unityElHeight});
+        // Module.dataUrl = puppet.unity.dataUrl;
+        // Module.codeUrl = puppet.unity.codeUrl;
+        // Module.asmUrl = puppet.unity.asmUrl;
+        // Module.memUrl = puppet.unity.memUrl;
+        // console.log("unityCanvasTemplateRendered: ", unityCanvasTemplateRendered);
         // unityCanvasTemplateRendered.attr("height", 300);
-        elementWrapper.html(unityCanvasTemplateRendered);
+        // elementWrapper.html(unityCanvasTemplateRendered);
         
         console.log("DONE!");
-        var scriptEl;
-        loadScript('./js/UnityLoader.js', scriptEl, function () {
-            console.log("Loaded");
-        });
+        // var scriptEl;
+        //     console.log("Loaded");
+        // });
     } else {
         delete Module;
         console.info("No unity info found found for puppet. Rendering title image");
@@ -122,12 +125,12 @@ function updateAnchorHref(prevId, nextId) {
     var prevAnchor = $('#prev-anchor');
     var nextAnchor = $('#next-anchor');
     if (prevId !== undefined) {
-        prevAnchor.prop("href", "/puppet.html?puppetId=" + prevId + "&class=" + searchClass);
+        prevAnchor.prop("href", "puppet.html?puppetId=" + prevId + "&class=" + searchClass);
     } else {
         prevAnchor.hide();
     }
     if (nextId !== undefined) {
-        nextAnchor.prop("href", "/puppet.html?puppetId=" + nextId + "&class=" + searchClass);
+        nextAnchor.prop("href", "puppet.html?puppetId=" + nextId + "&class=" + searchClass);
     } else {
         nextAnchor.hide();
     }
@@ -178,6 +181,7 @@ function render() {
     var searchClass = urlParam("class");
     var puppetId = urlParam("puppetId");
     $.get('data.json', function (puppets) {
+        puppets = JSON.parse(puppets);
         puppets = $.map(puppets, (el, index) => {
             el.index = index;
             return el;

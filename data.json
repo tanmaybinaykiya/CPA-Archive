@@ -29,7 +29,8 @@
         { "key":"Condition Notes",       "value":"Fair condition. Chips of paint missing on hairstyle base, speckled chest of gold. White spots on Skirt and hanging belt. _____ of foot piece. 03/07/2016: Paint chipping throughout color fading throughout"},
         { "key":"Current Value Min",     "value":"90"},
         { "key":"Current Value Min",     "value":"90"}
-    ]
+    ],
+    "unityDataFile":"unity/nakula/Shadow4.json"
 },{
     "name": "Mobarak",
     "description": "This is a string puppet. The head, hands, and feet are black wood. The face is depicted with white outlines. The top of the head is flat and bald. The clothing is red fabric. The shirt is long sleeved with a small white pattern. The pants are solid red and reach to the ankle. Kasperl is a traditional Bavarian male marionette. His carved wood head is painted with a red nose and cheeks. Additional painted features include thin brown eyebrows, blue eyes and a brown beard and hair. His hands and feet are also wooden. On his feet are white socks and black shoes. He wears a green pointed hat with red trim. He wears a red coat with gold trim and buttons, a green vest with red trim and yellow pants. There is a black and gold belt at his waist, and ruffled lace around his collar and cuffs. His strings are connected at the head, arms and legs",
@@ -154,7 +155,8 @@
         { "key":"Artist",                   "value":"Powell, David"},
         { "key":"Culture",                  "value":"Canadian"}
 
-    ]
+    ],
+    "unityDataFile":"unity/trixielabrique/Trixie.json"
 }, {
     "name": "Pandu Dewa Nata",
     "description": "Used to tell stories from both the Mahabharata and the Ramayana, as well as local stories based on the legends from Cirebon. Pandu Dewa Nata is a shadow puppet with a gold body, green face, and pulled back black hair that curves upward. The arms are mobile with a bracelet on each arm, and the feet are close together with anklets on the ankles. The wrap at the waist is patterned in gold and red.",
@@ -188,7 +190,8 @@
         { "key":"Provenance",               "value":"Dalang Raden S. Kandiwikarta created this shadow puppet with money provided by his father Raden Agus Suyono, circa 1924. Kandiwikarta used it to tell stories from both the Mahabaratha and the Ramayana, as well as local stories based onthe legands from Cirebon. He performed these stories in the kraton at Cirebon. Kandiwikarta's died in 1963. In 1976 theentire set of shadows was given to Kandiwikarta's youngest brother, Raden S. Rakhmat. Conner Bailey acquired theshadow set in October of 1982. He donated 27 pieces of the set to Center for Puppetry Arts on March 12th 1999"},
         { "key":"Artist",                   "value":"Kandiwikarta, Dalang Raden S."}
 
-    ]
+    ],
+    "unityDataFile":"unity/pandudewanata/Shadow3.json"
 }, {
     "name": "Rahwana",
     "description": "The shadow puppet is a male Indonesian Rahwana character. Rahwana is an immoral figure in Indonesian puppetry. Corrupt characters in Indonesian puppetry can be identified by facial features which appear on this figure. The features include red eyes, a large lengthy nose that is rounded at the tip.  This Rahwana character has a pink face and gold body. The outfit is boldly patterned in blues and red with white. Both arms are jointed at the shoulder and elbow. Each hand has a rod attached",
@@ -260,12 +263,7 @@
         { "key":"Material",                 "value":"Paint/Wood/Textile"},
         { "key":"Used",                     "value":"Performance/Wayang Gole"}
     ], 
-    "unity":{
-        "dataUrl": "unity/Web_MonkeyKing.data",
-        "codeUrl": "unity/Web_MonkeyKing.js",
-        "asmUrl": "unity/Web_MonkeyKing.asm.js",
-        "memUrl": "unity/Web_MonkeyKing.mem"
-    }
+    "unityDataFile":"unity/hanuman/MonkeyKing.json"
 }, {
     "name": "Pahlevan Kachal",
     "description": "Hand puppet with a wooden head and cloth body. The wooden head has eyes, a nose, ears, and a moustache carved into it. The head is painted dark yellow with brown eyes and a brown moustache. No hair. The clothing consists of a tunic with a green, blue, and yellow paisley/flower design, as well as an undershirt and pants with a grey and green paisley design. Around the outfit is a brown leather belt with light brown thread stitching",
@@ -295,7 +293,8 @@
         { "key":"Provenance",               "value":"Commissioned with funds donated by Nancy Lohman Staub. Created by Ms. Talie Tarighi through Poupak Azimpour."},
         { "key":"Artist",                   "value":"Tarighi, Talie Puppet Maker"}
 
-    ]
+    ],
+    "unityDataFile":"unity/pahlevankachal/IranianHand.json"
 }, {
     "name":"Untitled",
     "description":"",
@@ -325,7 +324,8 @@
         { "key":"Condition Date",        "value":"06/20/2016"},
         { "key":"Condition Notes",       "value":"Tears, white spots on front , paint loss"},
         { "key":"Provenance",            "value":"In February 2003, the Center for Puppetry Arts accepted a donation of 73 puppets and puppet related items from the Sarasota Opera Association, Inc. of Sarasota, Fla., which had been donated to them in 1995 by the late Marian McKennon."}
-    ]
+    ],
+    "unityDataFile":"unity/untitled1/Shadow1.json"
 }, {
     "name":"Untitled",
     "description":"",
@@ -355,5 +355,6 @@
         { "key":"Condition Date",        "value":"06/20/2016"},
         { "key":"Condition Notes",       "value":"Warping, paint loss, flaking"},
         { "key":"Provenance",            "value":"In February 2003, the Center for Puppetry Arts accepted a donation of 73 puppets and puppet related items from the Sarasota Opera Association, Inc. of Sarasota, Fla., which had been donated to them in 1995 by the late Marian McKennon."}
-    ]
+    ],
+    "unityDataFile":"unity/untitled2/Shadow2.json"
 }]
