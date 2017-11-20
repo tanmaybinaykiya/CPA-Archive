@@ -73,6 +73,12 @@ body{
 .image-gallery-image-wrapper img{
     object-fit: cover
 }
+
+.video-gallery-image-wrapper img{
+    margin-top: 20px;
+    padding: 0;
+}
+
 .search-result-img-wrapper{
     height: 124px;
     display: flex;

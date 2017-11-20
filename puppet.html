@@ -34,12 +34,27 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
 
     <script id="images-template" type="x-tmpl-mustache">
-        {{#images}}
-            <a href="#" class="image-gallery-image-wrapper col-md-4" data-toggle="modal" data-target="#imageCarousel">
-              <img src={{.}} class="media-object">
-            </a>
-        {{/images}}
+      {{#images}}
+          <a href="#" class="image-gallery-image-wrapper col-md-4" data-toggle="modal" data-target="#imageCarousel">
+            <img src={{.}} class="media-object">
+          </a>
+      {{/images}}
     </script>
+
+    <script id="youtube-video-player-template" type="x-tmpl-mustache">
+      {{#puppetVideoUrl}}
+        <iframe id="ytplayer" type="text/html" width="640" height="360" src="{{.}}" frameborder="0"></iframe>
+      {{/puppetVideoUrl}}
+    </script> 
+  
+
+    <script id="youtube-video-gallery-template" type="x-tmpl-mustache">
+      {{#puppetVideo}}
+          <a href="#yt-modal" data-videoId="{{videoId}}" class="video-gallery-image-wrapper col-md-4" data-toggle="modal">
+            <img src={{thumbnailUrl}} class="media-object col-md-12">
+          </a>
+      {{/puppetVideo}}
+    </script> 
 
     <script id="images-slideshow-template" type="x-tmpl-mustache">
       {{#images}}
@@ -165,7 +180,25 @@
       </div>
     </div>
     <!-- HEADER –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div id="footer">
+
+    <div id="yt-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Title comes here again</h4>
+          </div>
+          <div class="modal-body" id="yt-player">
+              
+          </div>
+        </div>
+    
+      </div>
+    </div>
+
+
+    <div id="footer">
     <div class="container">
       <div class="row">
           <a class="col-md-2" href="#">Center for Puppetry Art</a>
