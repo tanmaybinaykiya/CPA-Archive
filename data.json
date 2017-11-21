@@ -1,4 +1,13 @@
 [{
+    "name":"Educational Puppet",
+    "description":"Educational Puppet",
+    "collection":"AMERICAS",
+    "images":["./img/educational/IMG_2227.JPG", "./img/educational/IMG_2236.JPG", "./img/educational/IMG_2268.JPG", "./img/educational/IMG_7465.JPG", "./img/educational/IMG_7512.JPG", "./img/educational/IMG_7530.JPG", "./img/educational/IMG_7532.JPG", "./img/educational/IMG_7534.JPG"],
+    "imageTitle":"./img/educational/IMG_2268.JPG",
+    "info":[
+        { "key":" ",      "value":" "}
+    ]
+},{
     "name":"Nakula",
     "description":"Nakula is a shadow puppet with a central rod, gold body, black face, and black hair that is pulled to the back and upwards. The patterned wrap at the waist is red and green. Both arms are jointed at the shoulders and elbows with a rod at each hand, and the feet are wide apart. Used to tell stories from both the Mahabharata and the Ramayana, as well as local stories based on the legends from Cirebon.",
     "collection":"ASIAN",
