@@ -172,9 +172,9 @@ function renderVideosGallery(puppet){
             "thumbnailUrl": "https://img.youtube.com/vi/" + videoId + "/sddefault.jpg",
             "videoId": videoId
         };});
+        var youtubeVideoGalleryRendered = Mustache.render(youtubeVideoGalleryTemplate, {puppetVideo :puppetVideo});
+        $('#videos').html(youtubeVideoGalleryRendered);
     }
-    var youtubeVideoGalleryRendered = Mustache.render(youtubeVideoGalleryTemplate, {puppetVideo :puppetVideo});
-    $('#videos').html(youtubeVideoGalleryRendered);
 }
 
 function render() {
