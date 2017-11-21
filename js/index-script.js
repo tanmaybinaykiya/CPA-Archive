@@ -21,8 +21,12 @@ function render() {
     if (!searchKey && !searchClass) {
         searchClass = "ASIAN";
     }
-    $.get('data.json', function (puppets) {
-        puppets = JSON.parse(puppets);
+    $.get('./data.json', function (puppets) {
+        if (!(typeof puppets === 'object')){
+            console.log("puppets: ", puppets);
+            puppets = JSON.parse(puppets);
+        }
+
         puppets = $.map(puppets, (el, index) => {
             el.index = index;
             return el;
